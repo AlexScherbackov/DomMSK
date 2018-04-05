@@ -1,0 +1,115 @@
+.main-section{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	&__wrapper{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		grid-row-gap: 40px;
+		grid-template-areas:
+			"header header header header"
+			"sidebar content content content";
+		@include max-screen(767px){
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas:
+				"header header"
+				"content content";
+		}
+	}
+	&__header{
+		grid-area: header;
+	}
+	&__aside{
+		grid-area: sidebar;
+	}
+	&__content{
+		grid-area: content;
+		padding-left: 130px;
+		@include screen(768px, 991px){
+			padding-left: 30px;
+		}
+		@include max-screen(767px){
+			padding-left: 0;
+		}
+	}
+	&__title{
+		margin: 0;
+		display: inline-block;
+		min-width: 300px;
+		padding-bottom: 5px;
+		text-align: left;
+		& > span{
+			margin-right: 10px;
+		}
+		&--with-bb{
+			border-bottom: 1px solid $color-gray3;
+		}
+		&--mb{
+			margin-bottom: 20px;
+		}
+	}
+	&__gallery{
+		margin-top: 30px;
+	}
+	&__aside{
+		display: flex;
+		flex-direction: column;
+		@include max-screen(767px){
+			display: none;
+		}
+	}
+	
+}
+
+.gallery{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 30px;
+	grid-row-gap: 20px;
+	@include screen(768px, 991px){
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include max-screen(767px){
+		grid-template-columns: 1fr;
+	}
+	&__item{
+		position: relative;
+		
+	}
+	&__poster{
+		object-fit: cover;
+	}
+	&__title{
+		position: absolute;
+		display: block;
+		bottom: 0;
+		right: 0;
+	}
+	&__text-wrap{
+		position: relative;
+		height: 50px;
+		min-width: 100px;
+		padding: 2px 10px;
+		font-weight: 300;
+		font-size: em(18px);
+		line-height: 20px;
+		background-color: $acent-cl;
+		color: $acent-txt-cl;
+		& span{
+			display: block;
+			text-align: right;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -50px;
+			border: 25px solid transparent;
+			border-right: 25px solid $acent-cl;
+			border-bottom: 25px solid $acent-cl;
+			display: block;
+			width: 0;
+			height: 0;
+		}
+	}
+}

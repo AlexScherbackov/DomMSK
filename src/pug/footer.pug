@@ -1,0 +1,19 @@
+footer.main-foot
+	div.container.d-flex.justify-content-between.align-items-center
+		nav.main-foot__menu.menu
+			ul.main-foot__list.menu__list
+				each item in menuItem
+					li.menu__item
+						a.menu__link(href=item.href)=item.title
+		a.top-line__logo.main-foot__logo
+			img.top-line__image(src="../images/title-logo.png")
+	div.container
+		div.main-foot__b-line
+			ul.main-foot__list.main-foot__list--md-cl
+				li.menu__item
+					a.menu__link(href="/")="Размещение рекламы"
+				li.menu__item
+					a.menu__link(href="/")="Карта сайта"
+			p.main-foot__copyright="© 2013-2017 - dommsk.ru - Новостройки Москвы от застройщика на Доммск.ру "
+
+		

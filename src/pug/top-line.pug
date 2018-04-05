@@ -1,0 +1,19 @@
+div.top-line
+	div.container.d-flex.justify-content-between.align-items-center
+		a.top-line__logo.animated.fadeInLeft.animation__step1
+			img.top-line__image(src="../images/title-logo.png")
+		nav.top-line__menu.menu.animated.fadeInRight.animation__step1
+			ul.top-line-list.menu__list
+				each item in menuItem
+					li.menu__item
+						a.menu__link(href=item.href)=item.title
+		div.top-line__mobile-btn
+			span.mobile-btn#mobile-btn
+	div.mobile-menu.animated.bounceInDown.firstLoad#mobile-menu
+		div.mobile-menu__border-top
+		div.container.d-flex.justify-content-between.align-items-center
+			nav.menu.mobile-menu__nav
+				ul.top-line-list.menu__list.mobile-menu__list
+					each item in menuItem
+						li.menu__item
+							a.menu__link(href=item.href)=item.title

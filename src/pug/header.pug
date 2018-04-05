@@ -1,0 +1,35 @@
+header.main-head
+	div.container.main-head__content
+		h1.base-title.main-head__title.animated.flipInY.animation__step2 Квартиры в Москве и Московской области 
+			span.main-head__subtittle в новостройках от застройщиков
+		form.main-head__form.search-form#header-form
+			each item in mainForm
+				case item.type
+					when "select"
+						div.search-form__group.search-form__group--sm-order1
+							span.search-form__text=item.title
+							ul.search-form__radio-group.search-form__list
+								each opt, index in item.content
+									li.search-form__radio-item(data-index=index)=opt
+
+					when "input"
+						case item.inputType
+							when "type1"
+								div.search-form__group.search-form__group--sm-order2
+									span.search-form__text=item.title
+									label.search-form__control до:
+										input.search-form__input.search-form__price(type="text" value="1 350 000 руб.")
+
+							when "type2"
+								div.search-form__group.search-form__group--block.search-form__group--sm-order3
+									input.search-form__control.search-form__area(type="text"  placeholder=item.title )
+					when "btn"
+						div.search-form__group.search-form__group--center.search-form__group--sm-order4
+							button.search-form__btn(value=item.title type="submit")=item.title
+					when "checkbox"
+						div.search-form__group.search-form__checkboxes.search-form__group--sm-order3
+							each flag in item.content
+								label.search-form__checkboxes-label
+									span.search-form__checkbox(type="checkbox")
+									span.search-form__checkbox-text=flag
+								

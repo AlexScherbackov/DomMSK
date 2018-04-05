@@ -1,0 +1,37 @@
+.main-head{
+	width: 100%;
+	background-image: url('../../images/header-bg-lg.png');
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	padding-top: 100px;
+	padding-bottom: 60px;
+	@include max-screen(767px){
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	&__content{
+		@include screen(576px, 768px){
+			max-width: 670px!important;
+		}
+		@include max-screen(575px){
+			max-width: 380px;
+		}
+	}
+	&__title{
+		width: 100%;
+	}
+	&__subtittle{
+		display: block;
+		font-size: em(24px);
+		@include max-screen(767px){
+			font-size: em(18px);
+		}
+		@include max-screen(575px){
+			font-size: em(14px);
+		}
+	}
+	&__form{
+		margin-top: 40px;
+	}
+}

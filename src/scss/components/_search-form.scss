@@ -1,0 +1,234 @@
+.search-form{
+	max-width: 1200px;
+	width: 100%;
+	background: rgba($form-bg, 0.8);
+	padding: 30px 15px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	@include screen(768px, 991px){
+		justify-content: space-around;
+	}
+	@include max-screen(767px){
+		padding: 15px;
+	}
+	@include max-screen(575px){
+		justify-content: center;
+	}
+	color: $acent-txt-cl;
+	&__group{
+		display: flex;
+		flex-direction: column;
+		@include max-screen(575px){
+			margin-top: 10px;
+		}
+		&--block{
+			display: block;
+			max-width: 760px;
+			min-width: 270px;
+			width: 100%;
+			margin-top: 15px;
+			@include screen(992px, 1200px){
+				max-width: 500px;
+			}
+			@include screen(768px, 991px){
+				max-width: 420px;
+			}
+		}
+		&--center{
+			@include screen(992px, 1200px){
+				width: 100%;
+				align-items: center;
+			}
+			@include screen(480px, 768px){
+				width: 100%;
+				align-items: center;
+			}
+		}
+		&--sm-order1{
+			@include max-screen(575px){
+				order: 1;
+			}
+			
+		}
+		&--sm-order2{
+			@include max-screen(575px){
+				order: 2;
+			}
+		}
+		&--sm-order3{
+			@include max-screen(575px){
+				order: 3;
+			}
+		}
+		&--sm-order4{
+			@include max-screen(575px){
+				order: 4;
+			}
+		}
+	
+	}
+	&__text{
+		font-weight: 300;
+		font-size: em(16px);
+		line-height: 24px;
+		letter-spacing: 0.35px;
+		margin: 0;
+		@include max-screen(575px){
+			font-size: em(14px);
+		}
+	}
+	&__radio-group{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	&__radio-item{
+		min-width: 45px;
+		height: 40px;
+		text-transform: capitalize;
+		text-align: center;
+		background-color: $body-bg;
+		color: $main-txt-cl;
+		line-height: 40px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-left: 1px solid $main-form-gap;
+		font-family: $sub-font;
+		font-size: em(14px);
+		user-select: none;
+		cursor: pointer;
+		&:first-child{
+			border: none;
+		}
+		&.active{
+			background-color: $acent-cl;
+			color: $acent-txt-cl;
+			border-color: $acent-cl;
+		}
+		&:hover,&:focus{
+			color: $acent-txt-cl;
+			background-color: rgba($acent-cl, .8);
+			border-color: $acent-cl;
+		}
+
+	}
+	&__control{
+		height: 40px;
+		line-height: 40px;
+		background-color: $body-bg;
+		font-family: $sub-font;
+		font-size: em(16px);
+		color: $placeholder-cl;
+		padding: 0 10px;
+	}
+	&__input{
+		border: none;
+		outline: none;
+		&:hover,&:focus{
+			outline: none;
+		}
+	}
+	&__price{
+		text-align: center;
+		@include screen(768px, 991px){
+			width: 200px;
+		}
+		@include max-screen(767px){
+			width: 150px;
+		}
+
+	}
+	&__area{
+		width: 100%;
+		color: $main-txt-cl;
+		&:hover,&:focus{
+			outline: none;
+		}
+	}
+	&__checkboxes{
+		min-width: 230px;
+		padding-top: 25px;
+		display: grid;
+		grid-template-columns: repeat(3 , 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 25px;
+		grid-row-gap: 4px;
+		@include max-screen(767px){
+			grid-column-gap: 5px;
+
+		}
+		@include max-screen(575px){
+			padding-top: 10px;
+		}
+	}
+	&__checkbox{
+		height: 20px;
+		width: 20px;
+		position: relative;
+		display: block;
+		background-color: $body-bg;
+		color: $acent-cl;
+		transition: all ease 0.4s;
+		cursor: pointer;
+		&:hover,&:focus{
+			outline: none;
+		}
+		&.active{
+			&:before, &:after{
+				content: '';
+				display: block;
+				position: absolute;
+				background-color: $acent-cl;
+				width: 8px;
+				height: 4px;
+			}
+			&:before{
+				transform: rotate(45deg);
+				top: 10px;
+				left: 4px;
+			}
+			&:after{
+				transform: rotate(-45deg);
+				top: 9px;
+				left: 7px;
+				width: 10px;
+			}
+		}
+	}
+	&__checkboxes-label{
+		display: flex;
+		align-items: center;
+	}
+	&__checkbox-text{
+		font-family: $main-font;
+		font-weight: 300;
+		font-size: em(16px);
+		line-height: 24px;
+		display: block;
+		margin-left: 5px;
+		@include max-screen(767px){
+			font-size: em(14px);
+		}
+	}
+	&__btn{
+		width: 270px;
+		height: 45px;
+		margin-top: 15px;
+		background-color:$acent-cl;
+		color: $acent-txt-cl;
+		border: none;
+		@include max-screen(991px){
+			width: 190px;
+		} 
+		&:hover,&:focus{
+			color: $acent-txt-cl;
+			background-color: $color-blue2;
+			
+		}
+	}
+}

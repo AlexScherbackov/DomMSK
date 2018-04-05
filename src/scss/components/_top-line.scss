@@ -1,0 +1,140 @@
+.top-line{
+	width: 100%;
+	min-height: 45px;
+	height: auto;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	position: relative;
+	&__logo{
+		max-width: 215px;
+		min-width: 150px;
+		width: 100%;
+	}
+	&__menu{
+		display: block;
+		height: 100%;
+		@include max-screen(767px){
+			display: none;
+		}
+	}
+	&__mobile-btn{
+		display: none;
+		height: 100%;
+		margin-top: -24px;
+		cursor: pointer;
+		@include max-screen(767px){
+			display: block;
+		}
+	}
+}
+
+.menu{
+	&__list{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	&__item{
+		margin-right: 15px;
+		&:last-child{
+			margin-right: 0;
+		}
+		@include max-screen(991px){
+			margin-right: 0;
+		}
+	}
+	&__link{
+		width: 100%;
+		height: 100%;
+		padding-left: 15px;
+		padding-right: 10px;
+		text-decoration: none;
+		color: $main-txt-cl;
+		font-size: em(18px);
+		font-weight: 400;
+		letter-spacing: 0;
+		transition: all ease 0.4s;
+		&:hover,&:focus{
+			text-decoration: underline;
+		}
+		@include max-screen(991px){
+			font-size: em(16px);
+		}
+	}
+}
+
+.mobile-btn{
+	position: relative;
+	display: block;
+	width: 32px;
+	height: 6px;
+	background-color: $mobile-menu-cl;
+	&:before,&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		background-color: $mobile-menu-cl;
+		height: 6px;
+		right: 0;
+		transition: all 0.4s ease-in-out;
+	}
+	&:before{
+		top: 12px;
+		width: 23px;
+	}
+	&:after{
+		top: 24px;
+		width: 15px;
+	}
+	&.show{
+		transform: rotate(45deg);
+		top: 10px;	
+		&:after{
+			top: 0px;
+			width: 32px;
+			transform: rotate(-90deg);	
+		}
+		&:before{
+			opacity: 0;
+		}
+	}
+}
+
+.mobile-menu{
+	position: absolute;
+	width: 100%;
+	min-height: 45px;
+	padding-bottom: 10px;
+	background-color: $body-bg;
+	top: 100%;
+	transition: all ease 0.5s;
+	&.firstLoad{
+		display: none;
+	}
+	&.show{
+		display: block;
+	}
+	&__border-top{
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(to bottom, #4dc6f4 0%,#0085db 40%,#2d84d7 100%);;
+	}
+	&__nav{
+		width: 100%;
+		margin-top: 10px;
+	}
+	&__list{
+		@include max-screen(575px){
+			flex-direction: column;
+			& li{
+				margin-bottom: 10px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

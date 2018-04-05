@@ -7,3 +7,69 @@
 html {
 	box-sizing: border-box;
 }
+
+body{
+	display: flex;
+	flex-direction: column;
+	background-color: $body-bg;
+	font-family: $main-font;
+	width: 100%;
+	min-width: 320px;
+	position: relative;
+	margin: 0;
+	transition: 0.3s;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+a{
+	display: block;
+}
+
+.base-title{
+	color: $acent-title;
+	font-weight: 700;
+	font-size: em(36px);
+	line-height: 42px;
+	letter-spacing: 0.35px;
+	text-align: center;
+	margin: 0;
+	@include max-screen(767px){
+		font-size: em(30px);
+		line-height: 36px;
+	}
+	@include max-screen(575px){
+		font-size: em(24px);
+		line-height: 28px;
+	}
+	&__icon{
+		color: $acent-cl;
+	}
+	&--black{
+		color: $main-txt-cl;
+	}
+	&--type2{
+		font-weight: 300;
+		font-size: em(24px);
+		line-height: 30px;
+	}
+}
+
+.animation{
+	&__step1{
+		animation-delay: 0.5s;
+		animation-duration: 1s;
+	}
+	&__step2{
+		animation-delay: 0.8s;
+		animation-duration: 1s;
+	}
+	&__step3{
+		animation-delay: 1s;
+		animation-duration: 1s;
+	}
+}
+

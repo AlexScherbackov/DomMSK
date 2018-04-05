@@ -7,3 +7,11 @@
 @import "fonts";
 @import "vendor";
 @import "base";
+
+@import "./components/top-line";
+@import "./components/main-head";
+@import "./components/search-form";
+@import "./components/main";
+@import "./components/sidebar";
+@import "./components/content";
+@import "./components/footer";

@@ -1,12 +1,13 @@
 .search-form{
 	max-width: 1200px;
 	width: 100%;
-	background: rgba($form-bg, 0.8);
-	padding: 30px 15px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+	color: $main-txt-cl;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	@include screen(768px, 991px){
 		justify-content: space-around;
 	}
@@ -16,7 +17,14 @@
 	@include max-screen(575px){
 		justify-content: center;
 	}
-	color: $acent-txt-cl;
+	&--black-bg{
+		background: rgba($form-bg, 0.8);
+		color: $acent-txt-cl;
+		padding: 30px 15px;
+	}
+	&--no-wrap{
+		flex-wrap: nowrap;
+	}
 	&__group{
 		display: flex;
 		flex-direction: column;
@@ -118,7 +126,7 @@
 
 	}
 	&__control{
-		height: 40px;
+		height: 45px;
 		line-height: 40px;
 		background-color: $body-bg;
 		font-family: $sub-font;
@@ -229,6 +237,10 @@
 			color: $acent-txt-cl;
 			background-color: $color-blue2;
 			
+		}
+		&--small{
+			width: 150px;
+			margin: 0;
 		}
 	}
 }

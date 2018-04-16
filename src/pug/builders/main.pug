@@ -1,0 +1,67 @@
+append vars
+	- withoutSidebar = true;
+	- builders = [{key:'1-9', list: [{image:'../../images/builders-1.png', title: '494 УНР', adress: 'Московская область, г. Бронницы, ул Строительная, 4', web:'http://www.494unr.ru/', email: 'ous.unr@494unr.ru', phone: ['(495) 771-67-67', '(495) 607-77-40'], date:'1967', testimonials: '3', newBuild: ' 5', oldBuild: '2', href:'/'}]}, {key:'a-z', list: [{image:'../../images/builders-2.png', title: 'Adwill Managment', adress: 'Москва, ул. Золоторожский вал, д. 32, стр. 38', web:' http://www.adwill.ru', email: 'info@adwill.ru', phone: ['+7 (495) 665-62-53'], date:'2006', testimonials: '5', newBuild: '3', oldBuild: '0', href:'/'}, {image:'../../images/builders-3.png', title: 'AFI Development', adress: 'Москва, Бережковская набережная, 16А, стр.5', web:'http://www.afi-development.com/', email: 'info@afid.ru', phone: ['8 (495) 796-9988'], date:'2001', testimonials: '51', newBuild: ' 5', oldBuild: '5', href:'/'}, {image:'../../images/builders-4.png', title: 'CENTURY 21', adress: 'Москва, Кутузовский проспект, д. 36, стр. 3, 2 подъезд', web:' http://www.century21.ru', email: 'zapad@c21russia.com', phone: ['+7 (495) 981-21-21'], date:'2002', testimonials: '0', newBuild: ' 3', oldBuild: '1', href:'/'}, {image:'../../images/builders-5.png', title: 'MR Group', adress: 'Москва, 4я ул. 8 Марта, 6а', web:'http://mr-group.ru/', phone: ['+7 (495) 797-55-22'], date:'2003', testimonials: '3490', newBuild: ' 3', oldBuild: '1', href:'/'},{image:'../../images/builders-6.png', title: 'Urban Group', adress: 'Москва, ул. Большая Академическая, д. 5, стр. 1', web:'http://urbangroup.ru/', email: 'info@urbgroup.ru', phone: ['+7 (495) 225-8-225'], date:'2007', testimonials: '45', newBuild: '1', oldBuild: '0', href:'/'},{image:'../../images/builders-7.png', title: 'WellHomes', adress: 'Жуковский, ул. Жуковского, д. 31 оф. 204', web:'http://wellhomes.ru/', email: 'info@soffino.ru', phone: ['+7 (495) 201-30-77', '8 (926) 611-05-42'], date:'-', testimonials: '1', newBuild: ' 0', oldBuild: '0', href:'/'}]},{key:'a', list: [{image:'../../images/builders-8.png', title: '494 УНР', adress: 'Московская область, г. Бронницы, ул Строительная, 4', web:'http://www.494unr.ru/', email: 'ous.unr@494unr.ru', phone: ['(495) 771-67-67', '(495) 607-77-40'], date:'1967', testimonials: '3', newBuild: ' 5', oldBuild: '2', href:'/'},{image:'../../images/builders-9.png', title: '494 УНР', adress: 'Московская область, г. Бронницы, ул Строительная, 4', web:'http://www.494unr.ru/', email: 'ous.unr@494unr.ru', phone: ['(495) 771-67-67', '(495) 607-77-40'], date:'1967', testimonials: '3', newBuild: ' 5', oldBuild: '2', href:'/'},{image:'../../images/builders-10.png', title: '494 УНР', adress: 'Московская область, г. Бронницы, ул Строительная, 4', web:'http://www.494unr.ru/', email: 'ous.unr@494unr.ru', phone: ['(495) 771-67-67', '(495) 607-77-40'], date:'1967', testimonials: '3', newBuild: ' 5', oldBuild: '2', href:'/'}]}]
+
+block content
+	main.main-section
+		div.container
+			div.main-section__wrapper.main-section__wrapper--md-without-aside
+				block content
+					include ../asets/sidebar.pug
+				div.main-section__content
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Строительные компании Москвы и Подмосковья
+					form.search-form.search-form--no-wrap#builders-form
+						input.search-form__control.search-form__area(type='text' placeholder='Введите название компании')
+						button.search-form__btn.search-form__btn--small(type='submit' value='Поиск') Поиск
+					ul.alphavit.alphavit--mt20
+						each item in builders
+							li.alphavit__item.alphavit__item--sm-column
+								span.alphavit__key.alphavit__key--sm-column=item.key
+								div.alphavit__block
+									each elem in item.list
+										div.builder
+											div.builder__poster
+												img.builder__img(src=elem.image)
+											div.builder__content
+												h4.base-title.base-title--type4.base-title--black.builder__title=elem.title
+												if elem.adress
+													p.builder__text
+														span.builder__icon.fas.fa-map-marker
+														span=elem.adress
+												div.builder__row
+													if elem.web
+														p.builder__text
+															span.builder__icon.fab.fa-internet-explorer
+															span=elem.web
+													if elem.email
+														p.builder__text
+															span.builder__icon.fas.fa-envelope
+															span=elem.email
+												if elem.phone			
+													div.builder__row
+														each tel in elem.phone
+															p.builder__text
+																span.builder__icon.fas.fa-phone
+																span=tel
+												div.builder__row.builder__row--jcfs
+													p.builder__text
+														span Основана: 
+														span.builder__text--blue=elem.date
+													p.builder__text
+														span Отзывов:
+														span.builder__text--blue=elem.testimonials
+												div.builder__row.builder__row--jcfs
+													p.builder__text
+														span Новостроек: 
+														span.builder__text--blue=elem.newBuild
+													p.builder__text
+														span Построено: 
+														span.builder__text--blue=elem.oldBuild
+												a.builder__btn.content__btn(href=elem.href) 
+													span Подробнее
+													span.content__arrow
+					a.content__btn(href="/") 
+							span Показать больше застройщиков
+							span.content__arrow
+
+

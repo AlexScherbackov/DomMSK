@@ -1,0 +1,74 @@
+append vars
+	
+	- newsGrid = [{img: '../../images/mews-sm-1.png', title: 'В первом полугодии 2017 в Москве подорожали студии', text: 'Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017', href: ''},{img: '../../images/news-sm-2.png', title: 'ЖК "Новый Зеленоград": 50 оттенков яркого', text: 'Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017', href: '/'}, {img: '../../images/news-sm-3.png', title: 'ЖК "Солнечная система": редкие форматы квартир по некосмическим ценам', text: 'Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017', href: ''},{img: '../../images/news-sm-4.png', title: 'ЖК “Изумрудные холмы”: масштабный квартал с хорошей экологией, но сомнительной транспортной доступностью', text: 'Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017', href: '/'}]
+
+	- sortPosts = [{title: "В СЗАО построят жилой комплекс с детским садом", date: "25 Июля 2017, 06:00", text: "Москомэкспертиза согласовала проект жилого комплекса с инфраструктурными объектами.", link: "/", img: "images/post-1.png"}, {title: "На завершение подмосковных долгостроев привлечено 7 млрд рублей", date: "24 Июля 2017, 20:32", text: "Чтобы завершить строительство всех проблемных жилых комплексов на территории Московской области требуется 11.6 млрд рублей.", link: "/", img: "images/post-2.png"}, {title: 'Долгострой "Шишкин лес" находится под угрозой сноса', date: "23 Июля 2017, 10:06", text: "К сносу недостроенный ЖК «Шишкин лес» могут приговорить по причине его аварийности, об этом сообщает пресс-служба Москомстройинвеста.", link: "/", img: "images/post-3.png"}, {title: 'Первые корпуса ЖК "Кварталы 21/19" получили заключение о соответствии', date: "21 Июля 2017, 21:53", text: "Это последний документ, который требуется получить перед вводом новостройки в эксплуатацию.", link: "/", img: "images/post-4.png"}]
+
+	-articles = [{title:'В первом полугодии 2017 в Москве подорожали студии', img: 'images/extra_small-1.png', txt:'Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017.'},{title:'Апартаменты набирают популярность: за год их количество выросло на 15%', img: 'images/extra_small-2.png', txt:'В Москве продажи такого типа недвижимости ведутся в 103 проектах. Летом 2016 года число комплексов не превышало 88.'},{title:'Элитная недвижимость Москвы за 3 месяца подорожала почти на четверть', img: 'images/extra_small-3.png', txt:'Рынок столичной недвижимости в первом полугодии 2017 года проанализировали специалисты компании Welhome.'},{title:'Аналитики посчитали, насколько увеличится плотность населения ВАО после реновации', img: 'images/extra_small-4.png', txt:'По мнению специалистов компании «Азбука Жилья», плотность населения Восточного административного округа после реновации увеличится почти на треть.'},{title:'Список проблемных новостроек Москвы может пополниться на три жилых комплекса', img: 'images/extra_small-5.png', txt:'О том, что в Москве в ближайшее время может стать на три проблемных новостройки больше, стало известно со слов председателя Москомстройинвеста Константина Тимофеева.'}]
+
+block content
+	main.main-section
+		div.container
+			div.main-section__wrapper
+				block content
+					include ../asets/sidebar.pug
+				div.main-section__content
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Новости
+					div.news.news__grid
+						a.news__header.news__item(href='/')
+							img.news__img.news__img--lg(src="../../images/news-1.png")
+							div.news__hover
+								p.news__title.news__title--big ЖК "Московские водники": квартиры у воды и последние 3 дома в продаже
+								p.news__text.news__text--big Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017/ Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017. Повышение цен на квартиры студии зафиксировали специалисты компании "Метриум Групп", проанализировавшие рынок недвижимости Москвы в первом полугодии 2017.
+
+						each item in newsGrid
+							a.news__item(href=item.href)
+								img.news__img(src=item.img)
+								div.news__hover
+									p.news__title=item.title
+									p.news__text=item.text
+					div.content__short-post
+						each item in sortPosts
+							div.short-post
+								div.short-post__poster
+									img(src=item.img)
+								div.short-post__content
+									h4.short-post__title=item.title
+									span.short-post__date=item.date
+									p.short-post__text=item.text
+									a.short-post__link(href=item.link) 
+										span Подробнее
+										span.content__arrow
+
+						a.content__btn(href="/")
+							span Все новости
+							span.content__arrow
+					div.content__short-post
+						each item in sortPosts
+							div.short-post
+								div.short-post__poster
+									img(src=item.img)
+								div.short-post__content
+									h4.short-post__title=item.title
+									span.short-post__date=item.date
+									p.short-post__text=item.text
+									a.short-post__link(href=item.link) 
+										span Подробнее
+										span.content__arrow
+
+						a.content__btn(href="/")
+							span Все новости
+							span.content__arrow
+					div.content__articles
+						h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Полезные статьи
+						div.articles
+							each item in articles
+								div.short-post
+									div.short-post__poster.short-post__poster--midi-small.short-post__poster--sm-dn
+										img(src=item.img)
+									div.short-post__content
+										h4.short-post__title.short-post__title--without-mb=item.title
+										p.short-post__string.short-post__string--shadow=item.txt
+						a.content__btn(href="/") 
+							span Все полезные статьи	
+							span.content__arrow

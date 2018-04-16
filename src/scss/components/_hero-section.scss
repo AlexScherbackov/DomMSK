@@ -1,0 +1,151 @@
+.hero-section{
+	padding: 50px 0;
+
+	&__item{
+		&--br-blue{
+			border-right: 8px solid $acent-cl;
+			@include screen(577px, 991px){
+				border-right: none;
+				border-bottom: 8px solid $acent-cl;
+			}
+			@include max-screen(576px){
+				border: none;
+			}
+		}
+	}
+	&__logo{
+		max-width: 325px;
+		width: 100%;
+		margin: 35px auto 0;
+	}
+	&__poster{
+		position: relative;
+		max-height: 450px;
+		max-width: 300px;
+		&--w400{
+			max-width: 400px;
+			@include max-screen(767px){
+				margin: 20px auto;
+			}
+			& img{
+				height: 400px;
+			}
+		}
+		&--md-fullw{
+			@include max-screen(991px){
+				max-width: 100%;
+				& img{
+					height: 250px;
+				}
+			}
+		}
+	}
+	&__img{
+		object-fit: cover;
+		
+	}
+	&__advert{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 50px 0;
+		&--md-row{
+			flex-direction: row;
+			padding: 0 80px;
+			height: 100%;
+			& .hero-section__adv-defeat{
+				display: none;
+
+			}
+		}
+	}
+	&__adv-text{
+		color: $acent-txt-cl;
+		font-size: em(24px);
+		font-weight: 400;
+		text-align: center;
+		&--myriad{
+			font-family: $sub-font;
+		}
+		&--100{
+			font-size: em(100px);
+			display: block;
+		}
+		&--76{
+			font-size: em(76px);
+			display: block;
+		}
+		&--36{
+			font-size: em(36px);
+			display: block;
+		}
+	}
+	&__adv-defeat{
+		width: 70%;
+		height: 1px;
+		margin: 10px 0;
+		background-color: #fff;
+	}
+
+	&__list{
+		list-style-type: none;
+	}
+	&__text{
+		font-weight: 300;
+		font-size: em(16px);
+		line-height: 30px;
+		&--blue{
+			color: $acent-cl;
+		}
+		&--big{
+			margin-top: 45px;
+			margin-bottom: 45px;
+			font-weight: 400;
+			font-size: em(30px);
+		}
+		&--mt-20{
+			margin-top: 20px;
+		}
+		&--m-50{
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		&--bold{
+			font-weight: 700;
+		}
+		&--regular{
+			font-weight: 400;
+		}
+		&--w470{
+			width: 470px;
+			margin: 20px auto;
+		}
+		&--w280-xs{
+			@include max-screen(480px){
+				width: 280px;
+			}
+		}
+		&--tac{
+			text-align: center;
+		}
+	}
+	&__icon{
+		color:$acent-cl;
+		margin-right: 10px;
+	}
+	&__contacts{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 630px;
+		margin: 40px auto 0;
+		@include max-screen(480px){
+			flex-direction: column;
+		}
+	}
+}

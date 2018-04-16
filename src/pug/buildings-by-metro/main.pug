@@ -1,0 +1,27 @@
+append vars
+	- metroLineList = [{title: 'Сокольническая линия', color: 'red', href: '/'},{title: 'Калининско-Солнцевская линия', color: 'yellow', href: '/'}, {title: 'Замоскворецкая линия', color: 'green', href: '/'}, {title: 'Серпуховско-Тимирязевская линия', color: 'gray6', href: '/'}, {title: 'Арбатско-Покровская линия', color: 'blue2', href: '/'}, {title: 'Люблинско-Дмитровская линия', color: 'salad', href: '/'}, {title: 'Филёвская линия', color: 'turq', href: '/'}, {title: 'Каховская линия', color: 'aqua', href: '/'}, {title: 'Кольцевая линия', color: 'brown', href: '/'}, {title: 'Бутовская линия', color: 'donatello', href: '/'}, {title: 'Калужско-Рижская линия', color: 'orange', href: '/'}, {title: 'Кожуховская линия', color: 'puple', href: '/'}, {title: 'Таганско-Краснопресненская линия', color: 'violet', href: '/'}, {title: 'Третий пересадочный контур', color: 'black', href: '/'}]
+	- metroAlpha = [{key: 'a', list: [{title:'Авиамоторная', href:'/'},{title:'Автозаводская', href:'/'},{title:'Академическая', href:'/'},{title:'Александровский сад', href:'/'},{title:'Алексеевская', href:'/'},{title:'Алма-Атинская', href:'/'}, {title:'Алтуфьево', href:'/'}, {title:'Аннино', href:'/'}, {title:'Арбатская', href:'/'}, {title:'Аэропорт', href:'/'}]}, {key: 'a', list: [{title:'Авиамоторная', href:'/'},{title:'Автозаводская', href:'/'},{title:'Академическая', href:'/'},{title:'Александровский сад', href:'/'},{title:'Алексеевская', href:'/'},{title:'Алма-Атинская', href:'/'}, {title:'Алтуфьево', href:'/'}, {title:'Аннино', href:'/'}, {title:'Арбатская', href:'/'}, {title:'Аэропорт', href:'/'}]}, {key: 'a', list: [{title:'Авиамоторная', href:'/'}]}]
+
+block content
+	main.main-section
+		div.container
+			div.main-section__wrapper
+				block content
+					include ../asets/sidebar.pug
+				div.main-section__content
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb По линиям метро
+					ul.metro-list
+						each item in metroLineList
+							li.metro-list__item
+								a(class="metro-list__link metro-list__link--" + item.color href=item.href)=item.title
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb.main-section__title--mt По станциям метро
+					ul.alphavit
+						each item in metroAlpha
+							li.alphavit__item 
+								div.alphavit__key=item.key
+								ul.alphavit__sublist
+									each elem in item.list
+										li.alphavit__sublist-item
+											a.alphavit__link(href=elem.href)=elem.title
+
+

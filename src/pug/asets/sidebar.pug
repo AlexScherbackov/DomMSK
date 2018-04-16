@@ -1,0 +1,60 @@
+append vars
+	- sidebar = [{title: "Популярное", icon: "sidebar-menu__icon fas fa-question-circle", sub: [{title: 'Новостройки с акциями-скидками', href: '/'},{title: 'Проверенные новостройки', href: '/'},{title: 'Новостройки с ипотекой', href: '/'},{title: 'Новостройки с рассрочкой', href: '/'},{title: 'Самые дешевые', href: '/'},{title: 'Самые  дорогие', href: '/'},{title: 'Новостройки с отделкой', href: '/'},{title: 'Квартиры у метро', href: '/'},{title: 'Видовые квартиры', href: '/'}]}, {title: "Стоимость", icon: "sidebar-menu__icon fas fa-ruble-sign", sub: [{title:'Квартира за 1 миллион',href:'/'},{title:'Квартира за 1,5 миллиона',href:'/'},{title:'Квартира за 2 миллиона',href:'/'},{title:'Квартира за 2,5 миллиона',href:'/'},{title:'Квартира за 3 миллиона',href:'/'},{title:'Квартира за 3,5 миллиона',href:'/'}]}, {title: "Класс жилья", icon: "sidebar-menu__icon fas fa-star", sub:[{title:'Новостройки эконом-класса',href:'/'},{title:'Новостройки комфорт-класса',href:'/'},{title:'Новостройки бизнес-класса',href:'/'},{title:'Элитные новостройки',href:'/'}]},{title: "Местонахождение", icon: "sidebar-menu__icon fas fa-map-marker", sub:[{title: "Москва", list: '', href: ''}, {title: "ВАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "ЗАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "ЗелАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "Московская область", list: '', href: ''}, {title: "Балашихинский", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}]}]
+
+block content
+if (withoutSidebar)
+	div.main-section__aside.main-section__aside--md-hidden
+		ul.main-section__sidebar-menu.sidebar-menu
+			each item in sidebar
+				li.sidebar-menu__item
+					div.sidebar-menu__row
+						span(class=item.icon)
+						span.sidebar-menu__title=item.title
+						span.sidebar-menu__arrow
+					if(item.sub)
+						ul.sidebar-menu__submenu.sidebar-submenu
+							each elem in item.sub
+								li.sidebar-submenu__list-item
+
+									if(elem.list)
+										div.sidebar-menu__row.sidebar-menu__row--fs
+											span.sidebar-submenu__list-link=elem.title
+											span.sidebar-menu__arrow.sidebar-menu__arrow--sub
+										ul.sidebar-submenu__sub.sidebar-sub
+											each value in elem.list
+												li.sidebar-sub__list-item
+													span -
+													a.sidebar-sub__list-link(href=value.href)=value.title
+									else
+										if(elem.href)
+											a.sidebar-submenu__list-header(href=elem.href)=elem.title
+										else
+											span.sidebar-submenu__list-header=elem.title
+else
+	div.main-section__aside
+		ul.main-section__sidebar-menu.sidebar-menu
+			each item in sidebar
+				li.sidebar-menu__item
+					div.sidebar-menu__row
+						span(class=item.icon)
+						span.sidebar-menu__title=item.title
+						span.sidebar-menu__arrow
+					if(item.sub)
+						ul.sidebar-menu__submenu.sidebar-submenu
+							each elem in item.sub
+								li.sidebar-submenu__list-item
+
+									if(elem.list)
+										div.sidebar-menu__row.sidebar-menu__row--fs
+											span.sidebar-submenu__list-link=elem.title
+											span.sidebar-menu__arrow.sidebar-menu__arrow--sub
+										ul.sidebar-submenu__sub.sidebar-sub
+											each value in elem.list
+												li.sidebar-sub__list-item
+													span -
+													a.sidebar-sub__list-link(href=value.href)=value.title
+									else
+										if(elem.href)
+											a.sidebar-submenu__list-header(href=elem.href)=elem.title
+										else
+											span.sidebar-submenu__list-header=elem.title

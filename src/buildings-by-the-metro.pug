@@ -1,0 +1,11 @@
+extends pug/base
+
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	include pug/asets/top-line.pug
+	include pug/asets/small-header.pug
+	include pug/buildings-by-the-metro/main.pug
+	include pug/asets/footer.pug

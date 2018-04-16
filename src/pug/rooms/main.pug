@@ -1,0 +1,21 @@
+append vars
+		
+	- postCards = [{title: 'ЖК "Зелёная роща"', img: '../../images/floor-1.png', type: 'Однокомнатная квартира', area: '(40 кв.м)', price: '3 230 310', pricePerMetr: '80 000', adress: 'Пушкинский район, г. Ивантеевка', metro: 'Медведково', subType:'bus',time: '39 минут', build: '4 кв 2013', builder: 'Бэсткон'},{title: 'ЖК "Голландский квартал"', img: '../../images/floor-2.png', type: 'Однокомнатная квартира', area: '(34 кв.м)', price: '4 310 420', pricePerMetr: '98 232', adress: 'Пушкинский район, г. Ивантеевка', metro: 'Бабушкинская', subType:'bus',time: '35 минут', build: '4 кв 2017', builder: 'МАРТИН'},{title: 'ЖК "Южный"', img: '../../images/floor-3.png', type: 'Однокомнатная квартира', area: '(34.2 кв.м)', price: '3 180 600', pricePerMetr: '93 000', adress: 'Красногорский район, Красногорск', metro: 'Волоколамская', subType:'bus',time: '15 минут', build: '2кв 2018', builder: 'Прогресс'},{title: 'ЖК "Павшинская пойма"', img: '../../images/floor-1.png', type: 'Однокомнатная квартира', area: '(49.7 кв.м)', price: '4 157 653', pricePerMetr: '83 655', adress: 'Красногорский район, Красногорский бульв., мкрн. 4', metro: 'Мякинино', subType:'step',time: '29 минут', build: '4 кв 2017', builder: 'МАРТИН'}]
+
+
+block content
+	main.main-section
+		div.container
+			div.main-section__wrapper
+				block content
+					include ../asets/sidebar.pug
+				div.main-section__content
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Объявления о продаже квартир
+					div.content__post-card
+						each item in postCards
+							block content
+								include ../asets/post-card.pug
+					div.content__post-card
+						each item in postCards
+							block content
+								include ../asets/post-card.pug

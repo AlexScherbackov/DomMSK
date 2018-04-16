@@ -1,14 +1,33 @@
 .main-head{
 	width: 100%;
-	background-image: url('../../images/header-bg-lg.png');
-	background-size: cover;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	padding-top: 100px;
-	padding-bottom: 60px;
-	@include max-screen(767px){
-		padding-top: 50px;
-		padding-bottom: 50px;
+	background-color: $main-form-gap;
+	&--with-bg{
+		background-size: cover;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		padding-top: 100px;
+		padding-bottom: 60px;
+		@include max-screen(767px){
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+	&--main-bg{
+		background-image: url('../../images/header-bg-lg.png');
+	}
+	&--metro-bg{
+		background-image: url('../../images/header-bg-metro.png');
+		padding-top: 140px;
+		padding-bottom: 140px;
+		height: 440px;
+		background-position: center center;
+	}
+	&--builders-bg{
+		background-image: url('../../images/builders-header-bg.png');
+		padding-top: 140px;
+		padding-bottom: 140px;
+		height: 440px;
+		background-position: center center;
 	}
 	&__content{
 		@include screen(576px, 768px){
@@ -33,5 +52,13 @@
 	}
 	&__form{
 		margin-top: 40px;
+	}
+	&__text{
+		margin: 20px auto;
+		font-size: 	em(16px);
+		color: $color-white2;	
+		text-align: center;	
+		max-width: 800px;
+
 	}
 }

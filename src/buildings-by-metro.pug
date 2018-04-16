@@ -1,0 +1,13 @@
+extends pug/base
+
+
+append vars
+	- html.classList.push('page-index')
+	- header = {title: 'Новостройки у метро',classList:'main-head.main-head--with-bg main-head--metro-bg', subtitle: 'Московский метрополитен сегодня — это 188 действующих станций на 12 линиях. Общая протяжённость линий метро в Москве 313,1 км. До 2020 года планируется строительство еще 64 станций. Московское метро является третьим в мире по пассажиропотоку после Токийского и Сеульского метро.'}
+
+block content
+	include pug/asets/top-line.pug
+	include pug/asets/small-header.pug
+	include pug/asets/header-with-bg.pug
+	include pug/buildings-by-metro/main.pug
+	include pug/asets/footer.pug

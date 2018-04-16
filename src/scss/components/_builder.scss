@@ -1,0 +1,105 @@
+.builder{
+	display: flex;
+	position: relative;
+	border: 1px solid $color-gray3;
+	height: 200px;
+	position: relative;
+	&:hover{
+		&:after{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 5px;
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			z-index: 10;
+			background-color: $acent-cl;
+		}
+	}
+	@include max-screen(767px){
+		flex-direction: column;
+		height: 500px;
+		width: 250px;
+	}
+	&__poster{
+		width: 200px;
+		height: 200px;
+		background-color: $color-gray3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include max-screen(767px){
+			height: 250px;
+			width: 250px;
+		}
+	}
+	&__img{
+		object-fit: scale-down;
+		object-position: center;
+	}
+	&__content{
+		padding:  10px;
+		position: relative;
+		width: 380px;
+		@include max-screen(767px){
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-bottom: 50px;
+		}
+	}
+	&__title{
+		margin-bottom: 10px;
+	}
+	&__text{
+		font-size: em(14px);
+		line-height: 24px;
+		margin: 0;
+		word-wrap: normal;
+		&--blue{
+			color: $acent-cl;
+		}
+	}
+	&__icon{
+		color: $acent-cl;
+		margin-right: 20px;
+	}
+	&__row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&--jcfs{
+			width: 200px;
+		}
+	}
+	&__btn{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 150px;
+		&:hover,&:focus{
+			&:before{
+				opacity: 0.8;
+			}
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 100%;
+			border: 20px solid transparent;
+			border-right: 20px solid $acent-cl;
+			border-bottom: 20px solid $acent-cl;
+			display: block;
+			width: 0;
+			height: 0;
+			@include max-screen(480px){
+				display: none;
+			}
+		}
+	}
+}

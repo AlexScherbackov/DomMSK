@@ -1,0 +1,15 @@
+block content
+	header.hero-header(style='background-image: url(' + heroBg + ')')
+		block content
+			include asets/top-line.pug
+
+		div.hero-header__content.container
+			h1.base-title.hero-header__title Реклама на сайте
+			a.hero-header__logo
+				img.hero-header__image(src="../images/title-logo.png")
+			div.hero-header__item
+				span.hero-header__icon.fas.fa-phone
+				span.hero-header__text +7 (499) 322-46-76
+			div.hero-header__item
+				span.hero-header__icon.fas.fa-envelope
+				span.hero-header__text contact@dommsk.ru

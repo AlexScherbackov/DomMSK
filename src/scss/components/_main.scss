@@ -9,22 +9,40 @@
 		grid-template-areas:
 			"header header header header"
 			"sidebar content content content";
-		@include max-screen(767px){
+		@include screen(480px, 767px){
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-areas:
 				"header header"
 				"content content";
 		}
+			@include max-screen(480px){
+			grid-template-columns:  1fr;
+			grid-template-areas:
+				"header"
+				"content";
+		}
+		&--md-without-aside{
+			@include screen(768px, 991px){
+				grid-template-areas:
+					"header header header header"
+					"content content content content";
+				}
+			}
+			
 	}
 	&__header{
 		grid-area: header;
 	}
 	&__aside{
 		grid-area: sidebar;
+
 	}
 	&__content{
 		grid-area: content;
 		padding-left: 130px;
+		@include screen(992px,1200px){
+			padding-left: 50px;
+		}
 		@include screen(768px, 991px){
 			padding-left: 30px;
 		}
@@ -44,9 +62,22 @@
 		&--with-bb{
 			border-bottom: 1px solid $color-gray3;
 		}
+		&--bb-d{
+			border-bottom: 1px solid $color-gray4;
+		}
 		&--mb{
 			margin-bottom: 20px;
 		}
+		&--mt{
+			margin-top: 20px;
+		}
+		&--light{
+			font-weight: 300;
+		}
+		&--w300{
+			width: 300px;
+		}
+
 	}
 	&__gallery{
 		margin-top: 30px;
@@ -56,6 +87,12 @@
 		flex-direction: column;
 		@include max-screen(767px){
 			display: none;
+		}
+		&--md-hidden{
+			@include screen(768px, 991px){
+				display: none;
+			}
+			
 		}
 	}
 	

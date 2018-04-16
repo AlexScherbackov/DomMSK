@@ -1,0 +1,67 @@
+$itemColors: (
+	red: $color-red,
+	yellow: $color-yellow,
+	green: $color-green,
+	blue2: $color-blue2,
+	gray6: $color-gray6,
+	salad: $color-salad,
+	turq: $color-salad,
+	aqua: $color-aqua,
+	brown: $color-brown,
+	donatello: $color-donatello,
+	orange: $color-orange,
+	puple: $color-puple,
+	black: $color-black,
+	violet: $color-violet
+);
+
+.metro-list{
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-column-gap: 30px;
+	grid-row-gap: 2px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	@include max-screen(991px){
+		grid-template-columns: 2fr;
+	}
+	&__item{
+		width: 100%;
+		height: 35px;
+		background-color: $color-gray;
+	}
+	&__link{
+		position: relative;
+		text-decoration: none;
+		line-height: 35px;
+		padding-left: 40px;
+		color: $main-txt-cl;
+		font-weight: 400;
+		font-size: em(16px);
+		transition: background-color ease 0.4s;
+		transition: color ease 0.6s;
+		&:hover{
+			color: $acent-txt-cl;
+		}
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			width: 10px;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+		@each $ident, $color in $itemColors {
+			&--#{$ident}{
+				&:before{
+					background-color: $color;
+				}
+				&:hover{
+					background-color: $color;
+				}
+			}
+		}
+	}
+}

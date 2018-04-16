@@ -1,0 +1,72 @@
+.long-post{
+	display:grid;
+	grid-template-columns: repeat(2, 2fr);
+	grid-column-gap: 30px;
+	@include max-screen(991px){
+		grid-template-columns: 2fr;
+	}
+	&__title{
+		margin: 20px 0;
+		font-weight: 600;
+		line-height: 24px;
+	}
+	&__price{
+		display: block;
+		color: $acent-cl;
+		@include max-screen(991px){
+			display: inline-block;
+			margin-left: 5px;
+		}
+
+	}
+	&__price-per-metr{
+		color: $main-txt-cl;
+	}
+	&__poster{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 340px;
+		max-height: 250px;
+		width: 100%;
+		background-color: $color-gray;
+		@include max-screen(991px){
+			margin: 0 auto;
+		}
+	}
+	&__img{
+		object-fit: cover;
+	}
+	&__text{
+		margin-bottom: 30px;
+	}
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		&--short{
+			max-width: 270px;
+			@include max-screen(480px){
+				max-width: 100%;
+			}
+		}
+	}
+	&__list-item{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		font-size: em(14px);
+		font-weight: 400;
+		line-height: 24px;
+		&--tar{
+			text-align: right;
+		}
+	}
+	&__shadow-text{
+		color: $shadow-txt-cl;
+	}
+	&__value{
+		color: $main-txt-cl;
+		text-align: right;
+	}
+}

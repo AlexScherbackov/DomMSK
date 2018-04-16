@@ -1,0 +1,158 @@
+.post-card{
+	position: relative;
+	font-weight: 400;
+	color: $main-txt-cl;
+	text-decoration: none;
+	max-width: 370px;
+	transition: all ease 0.4s;
+	@include max-screen(1200px){
+		max-width: 100%;
+	}
+	&:hover , &:focus{
+		& .post-card__content:after{
+			display: block;
+		}
+		
+	}
+	&__poster{
+		width: 100%;
+		position: relative;
+		&--wbg{
+			background-color: $alter-bg;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			height: 250px;
+			& > img{
+				max-height: 150px;
+				margin-top: 30px;
+				object-fit: contain;
+			}
+		}
+	}
+	&__title{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 15px 20px;
+		background-color: $acent-cl;
+		color: $acent-txt-cl;
+		font-size: em(16px);
+		@include max-screen(480px){
+			width: 100%;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 100%;
+			border: 22px solid transparent;
+			border-left: 22px solid $acent-cl;
+			border-bottom: 27px solid $acent-cl;
+			display: block;
+			width: 0;
+			height: 0;
+			@include max-screen(480px){
+				display: none;
+			}
+		}
+	}
+	&__content{
+		border-left: 1px solid $color-gray3;
+		border-right: 1px solid $color-gray3;
+		border-bottom: 1px solid $color-gray3;
+		padding: 15px 20px;
+		position: relative;
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			display: none;
+			width: 100%;
+			height: 5px;
+			background-color: $acent-cl;
+		}
+	}
+	&__location{
+		margin: 0;
+		display: flex;
+		* span{
+			display: block;
+			font-size: em(14px);
+		}
+		&--mt{
+			margin-top: 20px;
+		}
+	}
+	&__icon{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 25px;
+		height: 20px;
+		width: 25px;
+		&--blue{
+			color: $acent-cl;
+			&  svg{
+				fill: $acent-cl;
+				fill-rule: evenodd;
+			}
+		}
+		&--red{
+			color: $color-red;
+			& svg{
+				fill: $color-red;
+			}
+			
+		}
+	}
+	&__row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 20px;
+		&--no-mt{
+			margin-top: 0;
+		}
+		&--sm-mt{
+			margin-top: 8px;
+		}
+		&--jcfs{
+			justify-content: flex-start;
+			margin: 0;
+		}
+
+	}
+	&__row-item{
+		width: 50%;
+		flex-shrink: 2;
+		display: flex;
+		align-items: center;
+	}
+	&__text{
+		font-size: em(14px);
+		font-weight: 400;
+		&--shadow{
+			line-height: 20px;
+			color: $color-gray5;
+		}
+		&--big{
+			font-size: em(16px);
+		}
+	}
+	&__delimiter{
+		height: 2px;
+		width: 100px;
+		background-color: $acent-cl;
+	}
+	&__text-element{
+		margin-left: 12px;
+		&:first-child{
+			margin: 0;
+		}
+		&--type2{
+			margin-left: 40px;
+		}
+	}
+}

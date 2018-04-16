@@ -27,6 +27,9 @@ img{
 }
 a{
 	display: block;
+	&:focus{
+		outline: none;
+	}
 }
 
 .base-title{
@@ -51,10 +54,31 @@ a{
 	&--black{
 		color: $main-txt-cl;
 	}
+	&--type1{
+		font-size: em(30px);
+		line-height: 36px;
+		font-weight: 400;
+	}
 	&--type2{
 		font-weight: 300;
 		font-size: em(24px);
 		line-height: 30px;
+	}
+	&--type3{
+		font-weight: 600;
+		font-size: em(16px);
+		line-height: 22px;
+		text-align: left;
+	}
+	&--type4{
+		font-weight: 400;
+		font-size: em(16px);
+		line-height: 22px;
+		text-align: left;
+	}
+	&--center{
+		max-width: 680px;
+		margin: 0 auto;
 	}
 }
 
@@ -73,3 +97,15 @@ a{
 	}
 }
 
+
+.gray{
+	background-color: $color-gray;
+}
+.white{
+	background-color: $color-white;
+}
+input{
+	&:hover,&:focus{
+		outline: none;
+	}
+}

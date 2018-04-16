@@ -1,0 +1,12 @@
+extends pug/base
+
+
+append vars
+	- html.classList.push('page-index')
+	- header = {title: 'Застройщики Москвы и Подмосковья', classList:'main-head.main-head--with-bg main-head--builders-bg', subtitle: 'В этом разделе представлен список крупнейших строительных компаний - застройщиков Москвы и Подмосковья. Для вашего удобства также представлен список новостроек по каждому застройщику, отзывы покупателей и контактная информация.'}
+
+block content
+	include pug/asets/top-line.pug
+	include pug/asets/header-with-bg.pug
+	include pug/builders/main.pug
+	include pug/asets/footer.pug

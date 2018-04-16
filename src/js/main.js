@@ -10,6 +10,7 @@ var _init = {
 		_init._bindingEvent('#mobile-btn', 'click', toggleAnimate.bind('#mobile-menu', 'show','bounceInDown', 'bounceOutUp'));
 		_init._bindingEvent('#mobile-btn', 'click', toggleClass.bind('#mobile-btn', 'show'));
 		_init._bindingEvent('#mobile-btn', 'click', toggleClass.bind('#mobile-menu', 'show'));
+		_init._cutString('.news__hover', 200);
 
 		const form = new formWorker('#header-form');
 	},
@@ -17,6 +18,31 @@ var _init = {
 		const element = document.querySelector(elem);
 		element.addEventListener(event, func);
 
+	},
+	_cutString(selector, length){
+		const strings = document.querySelectorAll(selector);
+		
+		for(let i = 0; i < strings.length; i++){
+			let buffer = '';
+			let index;
+			
+			for(let j = 0; j < strings[i].childNodes.length; j++){
+				buffer += strings[i].childNodes[j].textContent;
+				index = j;
+			}
+			
+			if(buffer.length > length){
+				const minus = length - strings[i].childNodes[index - 1].textContent.length;
+				let arr = strings[i].childNodes[index].textContent.split('');
+				arr.length = minus;
+				arr.push('...');
+				const str = arr.join('');
+				strings[i].childNodes[index].textContent = str;
+			}
+
+		}
+
+		
 	}
 }
 

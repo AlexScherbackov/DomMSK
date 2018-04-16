@@ -1,0 +1,43 @@
+a.post-card(href=item.href)
+	div.post-card__poster
+		img.post-card__img(src=item.img)
+		span.post-card__title=item.title
+	div.post-card__content
+		p.post-card__location
+			span.fas.fa-map-marker.post-card__icon.post-card__icon--blue
+			span=item.loc
+		div.post-card__row
+			div.post-card__row-item
+				span.post-card__icon.post-card__icon--red
+					+svg('metro')
+				span.post-card__text=item.subStatio
+			div.post-card__row-item
+				case item.subType
+					when 'bus'
+						span.post-card__icon.post-card__icon--blue
+							+svg('bus')
+						span.post-card__text=item.subTime
+					when 'step'
+						span.post-card__icon.post-card__icon--blue
+							+svg('step')
+						span.post-card__text=item.subTime
+		div.post-card__row
+			div.post-card__row-item
+				span.post-card__text.post-card__text--shadow Сдача
+			div.post-card__row-item
+				span.post-card__text=item.release
+		div.post-card__row.post-card__row--no-mt
+			div.post-card__row-item
+				span.post-card__text.post-card__text--shadow Застройщик
+			div.post-card__row-item
+				span.post-card__text=item.builder
+		div.post-card__row
+			div.post-card__delimiter
+		div.post-card__row
+			span.post-card__text.post-card__text--big Планировки:
+		each elem in item.flors
+			div.post-card__row.post-card__row--sm-mt
+				div.post-card__row-item 
+					span.post-card__text=elem.type
+				div.post-card__row-item 
+					span.post-card__text=elem.price

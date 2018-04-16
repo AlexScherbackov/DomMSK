@@ -1,0 +1,10 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+	- heroBg = 'images/hero-header-bg.png'
+
+block content
+	include pug/hero-header.pug
+	include pug/hero/main.pug
+	include pug/asets/footer.pug

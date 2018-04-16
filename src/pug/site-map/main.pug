@@ -1,0 +1,51 @@
+append vars
+	
+	- destricts = [{title: 'Новостройки Москвы', type: false , list: [{title: 'Новостройки Москвы эконом класса', href: ''}, {title: 'Новостройки бизнес класса в Москве', href: '/'}, {title: 'Элитные новостройки Москвы', href: '/'}, {title: 'Новостройки Москвы комфорт класса', href: '/'}, {title: 'Новостройки Москвы премиум класса', href: '/'}, {title: 'Новостройки с отделкой в Москве', href: '/'}]}, {title: 'Восток Москвы (ВАО)', type: true , list: [{title: 'Богородское', href: '/'}, {title: 'Новогиреево', href: '/'}, {title: 'Новокосино', href: '/'}, {title: 'Перово', href: '/'}, {title: 'Преображенское', href: '/'}, {title: 'Соколиная Гора', href: '/'}, {title: 'Сокольники', href: '/'}]}, {title: 'Новостройки Москвы', type: false , list: [{title: 'Новостройки Москвы эконом класса', href: ''}, {title: 'Новостройки бизнес класса в Москве', href: '/'}, {title: 'Элитные новостройки Москвы', href: '/'}, {title: 'Новостройки Москвы комфорт класса', href: '/'}, {title: 'Новостройки Москвы премиум класса', href: '/'}, {title: 'Новостройки с отделкой в Москве', href: '/'}]}, {title: 'Восток Москвы (ВАО)', type: true , list: [{title: 'Богородское', href: '/'}, {title: 'Новогиреево', href: '/'}, {title: 'Новокосино', href: '/'}, {title: 'Перово', href: '/'}, {title: 'Преображенское', href: '/'}, {title: 'Соколиная Гора', href: '/'}, {title: 'Сокольники', href: '/'}]},]
+	- streets = [{title: '40 лет Октября, пр.', href:'/'}, {title: '60-летия Октября, пр', href:'/'}, {title: '800-летия Москвы, ул.', href:'/'}, {title: 'Автозаводская ул.', href:'/'}, {title: 'Академика Виноградова', href:'/'}, {title: 'Академика Ильюшина, ул.', href:'/'}, {title: 'Академика Королёва, ул.', href:'/'},{title: ' Академика Опарина, ул.', href:'/'}, {title: ' Академика Скрябина, ул.', href:'/'}, {title: ' Алтуфьевское ш.', href:'/'},{title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}, {title: 'Базовская ул.', href:'/'}]
+	- metro = [{title:'Авиамоторная', href: ''}, {title:'Автозаводская', href: '/'}, {title:'Академическая', href: '/'}, {title:'Академическая', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}, {title:'Александровский сад', href: '/'}]
+
+block content
+	main.main-section
+		div.container
+			div.main-section__wrapper
+				block content
+					include ../asets/sidebar.pug
+				div.main-section__content
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb Карта сайта
+					div.content__4frgrid.content__3frgrid-sm.content__1frgrid-xs.site-map
+						div.site-map__destricts
+							each item in destricts
+								div.site-map__item
+									h4.base-title.base-title--black.base-title--type3=item.title
+									if item.type
+										ul.site-map__list.site-map__flex-row
+											each elem in item.list
+												li.site-map__list-item.site-map__list-item--w50
+													a.site-map__link(href=elem.href)
+														span.site-map__icon
+														span.site-map__text=elem.title
+									else 
+										ul.site-map__list
+											each elem in item.list
+												li.site-map__list-item
+													a.site-map__link(href=elem.href)
+														span.site-map__text=elem.title
+						div.site-map__streets
+							div.site-map__item 
+								h4.base-title.base-title--black.base-title--type3 Улицы Москвы
+								ul.site-map__list.site-map__list--dg-sm
+									each item in  streets
+										li.site-map__list-item
+											a.site-map__link(href=item.href)
+												span.site-map__icon
+												span.site-map__text=item.title
+
+						div.site-map__metro
+							div.site-map__item 
+								h4.base-title.base-title--black.base-title--type3 Новостройки у станций метро
+								ul.site-map__list
+									each item in  metro
+										li.site-map__list-item
+											a.site-map__link(href=item.href)
+												span.site-map__icon
+												span.site-map__text=item.title

@@ -1,0 +1,87 @@
+append vars
+	- statistic = [{icon: 'far fa-building', text: 'застройщики Москвы и Московской области'},{icon: 'far fa-building', text: 'застройщики Москвы'},{icon: 'far fa-building', text: 'новостройки Москвы'},{icon: 'far fa-building', text: 'новостройки Подмосковья'},{icon: 'far fa-building', text: 'планировка квартир по адресу'},{icon: 'far fa-building', text: 'новостройки Подмосковья эконом класса от застройщика с отделкой'},{icon: 'far fa-building', text: 'квартиры в новой Москве от застройщика с отделкой эконом класса цены'},{icon: 'far fa-building', text: 'готовые новостройки Подмосковья с отделкой эконом класса'},{icon: 'far fa-building', text: 'новостройки на карте Москвы и Подмосковья'},{icon: 'far fa-building', text: 'крупные застройщики Москвы и Московской области'},{icon: 'far fa-building', text: 'новостройки с отделкой в Подмосковье от застройщика'}]
+	- places = [{icon: 'fas fa-home', text: 'Главной'},{icon: 'fas fa-search', text: 'Выдаче поиска по недвижимости'}, {icon: 'fas fa-search', text: 'Страницах ЖК и квартир'}, {icon: 'fas fa-chart-area', text: 'Страницах затройщиков'}, {icon: 'fas fa-newspaper', text: 'Страницах новостей и статей'}]
+
+
+
+block content
+section.white.hero-section
+	div.container
+		div.row
+			div.col-lg-4.col-md-12
+				div.hero-section__poster.hero-section__poster--md-fullw
+					img.hero-section__img(src='../../images/adversting-1.png')
+					div.hero-section__advert.hero-section__advert--md-row
+						p.hero-section__adv-text.hero-section__adv-text--myriad 
+							span.hero-section__adv-text--100 1 
+							span.hero-section__adv-text--36 место
+						div.hero-section__adv-defeat
+						div.hero-section__adv-text В Яндекс по запросу “Застройщики Москвы и Московской области”
+
+			div.col-lg-8.col-md-12
+				h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Статистика
+				div.hero-section__text Основные запросы по которым люди приходят на сайт:
+				ul.hero-section__list
+					each item in statistic
+						li.hero-section__list-item 
+							span(class="hero-section__icon "+item.icon)
+							span.hero-section__text=item.text
+section.hero-section.gray
+	div.container
+		div.row
+			div.col-lg-6.col-md-7.cool-sm-12
+				h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--bb-d.main-section__title--mb Где размещается реклама
+				div.hero-section__text Объявление размещается в выделенных текстово-графических блоках.
+				div.hero-section__text Они сквозные и находятся на всех страницах сайта:
+				ul.hero-section__list
+					each item in places
+						li.hero-section__list-item 
+							span(class="hero-section__icon "+item.icon)
+							span.hero-section__text=item.text
+				div.hero-section__text Для всех клиентов бесплатная выгрузка xml объявлений в общий каталог квартир и размещение в каталоге новостроек.
+			div.col-lg-6.col-md-5.cool-sm-12
+				div.hero-section__poster.hero-section__poster--w400
+					img.hero-section__img(src='../../images/adversting-2.png')
+					div.hero-section__advert
+						div.hero-section__adv-text Размеры рекламных блоков
+						div.hero-section__adv-defeat
+						p.hero-section__adv-text.hero-section__adv-text--myriad 
+							span.hero-section__adv-text--76 770x200
+							span.hero-section__adv-text--76 270x250
+section.white.hero-section
+	div.container
+		div.row
+			div.col-lg-6.col-md-12.col-sm-12.col-12.hero-section__item--br-blue
+				div.hero-section__text Как у вас с выполнением плана продаж в прошлом месяце? 
+				div.hero-section__text Кризис и квартиры хуже продаются?
+				div.hero-section__text На сколько процентов вы запланировали рост продаж в этом году?
+				div.hero-section__text.hero-section__text--blue Эти вопросы часто задают руководителю отдела продаж или маркетинга
+				div.hero-section__text.hero-section__text--big Какие есть решения с помощью интернета?
+
+			div.col-lg-6.col-md-12.col-sm-12.col-12
+				div.hero-section__text.hero-section__text--big.hero-section__text--mt-20 Как экономить на интернет-рекламе в кризис?
+				div.hero-section__text Закупать больше трафика с контекстной рекламы
+				div.hero-section__text Уменьшать стоимость трафика 
+				div.hero-section__text.hero-section__text--blue.hero-section__text--bold Искать новые сайты для размещения объявлений
+
+
+	div.container
+		div.hero-section__text.hero-section__text--m-50.hero-section__text--regular Контекстная реклама эффективный, но дорогой способ привлечения трафика. Уменьшение стоимости трафика — отдельная большая задача, которая находится в другой области. Новые сайты для размещения объявлений в условиях кризиса выглядят разумно. Качество трафика лучше, чем с контекстных объявлений Яндекс.Директ и Гугл Эдвордс и существенно дешевле. Почему трафик лучше? Трафик с хороших сайтов более горячий, чем с контекстных объявлений. Люди заходят на сайт по тем же запросам и ищут нужную информацию уже на сайте. Сайт выступает в роли посредника, подогревающего трафик с поиска. Почему дешевле? Потому что на сайте нет посредников в виде рекламных сетей. Вы покупаете трафик напрямую у владельца сайта. 
+
+
+	div.container
+		h2.base-title.base-title--black.base-title--type1.base-title--center Мы предлагаем размещение объявлений в каталоге новостроек Москвы и Подмосковья 
+		a.hero-section__logo(href='/')
+			img.hero-section__img(src="../../images/title-logo.png")
+
+section.hero-section.gray
+	div.container
+		h2.base-title.base-title--black.base-title--center.main-section__title--bb-d.main-section__title--light.main-section__title--w300 Контакты
+		div.hero-section__text.hero-section__text--regular.hero-section__text--w470.hero-section__text--w280-xs.hero-section__text--tac Для того чтобы узнать подробности размещения, варианты и способы оплаты рекламных блоков
+		div.hero-section__contacts
+			div.hero-header__item
+				span.hero-header__icon.fas.fa-phone
+				span.hero-header__text +7 (499) 322-46-76
+			div.hero-header__item
+				span.hero-header__icon.fas.fa-envelope
+				span.hero-header__text contact@dommsk.ru

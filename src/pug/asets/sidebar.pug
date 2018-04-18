@@ -1,5 +1,5 @@
 append vars
-	- sidebar = [{title: "Популярное", icon: "sidebar-menu__icon fas fa-question-circle", sub: [{title: 'Новостройки с акциями-скидками', href: '/'},{title: 'Проверенные новостройки', href: '/'},{title: 'Новостройки с ипотекой', href: '/'},{title: 'Новостройки с рассрочкой', href: '/'},{title: 'Самые дешевые', href: '/'},{title: 'Самые  дорогие', href: '/'},{title: 'Новостройки с отделкой', href: '/'},{title: 'Квартиры у метро', href: '/'},{title: 'Видовые квартиры', href: '/'}]}, {title: "Стоимость", icon: "sidebar-menu__icon fas fa-ruble-sign", sub: [{title:'Квартира за 1 миллион',href:'/'},{title:'Квартира за 1,5 миллиона',href:'/'},{title:'Квартира за 2 миллиона',href:'/'},{title:'Квартира за 2,5 миллиона',href:'/'},{title:'Квартира за 3 миллиона',href:'/'},{title:'Квартира за 3,5 миллиона',href:'/'}]}, {title: "Класс жилья", icon: "sidebar-menu__icon fas fa-star", sub:[{title:'Новостройки эконом-класса',href:'/'},{title:'Новостройки комфорт-класса',href:'/'},{title:'Новостройки бизнес-класса',href:'/'},{title:'Элитные новостройки',href:'/'}]},{title: "Местонахождение", icon: "sidebar-menu__icon fas fa-map-marker", sub:[{title: "Москва", list: '', href: ''}, {title: "ВАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "ЗАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "ЗелАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "Московская область", list: '', href: ''}, {title: "Балашихинский", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}]}]
+	- sidebar = [{title: "Популярное", icon: "sidebar-menu__icon fas fa-question-circle", sub: [{title: 'Новостройки с акциями-скидками', href: '/'},{title: 'Проверенные новостройки', href: '/'},{title: 'Новостройки с ипотекой', href: '/'},{title: 'Новостройки с рассрочкой', href: '/'},{title: 'Самые дешевые', href: '/'},{title: 'Самые  дорогие', href: '/'},{title: 'Новостройки с отделкой', href: '/'},{title: 'Квартиры у метро', href: '/'},{title: 'Видовые квартиры', href: '/'}]}, {title: "Стоимость", icon: "sidebar-menu__icon fas fa-ruble-sign", sub: [{title:'Квартира за 1 миллион',href:'/'},{title:'Квартира за 1,5 миллиона',href:'/'},{title:'Квартира за 2 миллиона',href:'/'},{title:'Квартира за 2,5 миллиона',href:'/'},{title:'Квартира за 3 миллиона',href:'/'},{title:'Квартира за 3,5 миллиона',href:'/'}]}, {title: "Класс жилья", icon: "sidebar-menu__icon fas fa-star", sub:[{title:'Новостройки эконом-класса',href:'/'},{title:'Новостройки комфорт-класса',href:'/'},{title:'Новостройки бизнес-класса',href:'/'},{title:'Элитные новостройки',href:'/'}]},{title: "Местонахождение", icon: "sidebar-menu__icon fas fa-map-marker", sub:[{title: "Москва", list: '', href: ''}, {title: "ВАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "ЗАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "ЗелАО", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}, {title: "Московская область", list: '', href: ''}, {title: "Балашихинский", list: [{title: "Богородское", href: "/"}, {title: "Измайлово", href: "/"}, {title: "Косино-Ухтомский", href: "/"}, {title: "Перово", href: "/"}, {title: "Преображенское", href: "/"}]}]},{title: "Дата сдачи", icon: "sidebar-menu__icon far fa-calendar-check", sub: [{title: '1 квартал 2018', href: '/'},{title: '2 квартал 2018', href: '/'},{title: '3 квартал 2018', href: '/'},{title: '4 квартал 2018', href: '/'}]}]
 
 block content
 if (withoutSidebar)
@@ -58,3 +58,45 @@ else
 											a.sidebar-submenu__list-header(href=elem.href)=elem.title
 										else
 											span.sidebar-submenu__list-header=elem.title
+		div.sidebar-menu__widget.widget
+			h4.widget__title Ваши возможности
+			form.widget__form#options
+				label.widget__wrapp Сколько у Вас денег сейчас?
+				div.widget__form-group
+					input.widget__control(type='range' min='0' max='20000000' step='100000' value='10000000')
+					span.widget__text(data-postfix=' р.') 0 р.
+				label.widget__wrapp Сколько готовы платить в месяц?
+				div.widget__form-group
+					input.widget__control(type='range' min='10000' max='1000000' step='10000' value='500000')
+					span.widget__text(data-postfix=' р.') 0 р.
+				label.widget__wrapp Сколько лет Вы готовы платить?
+				div.widget__form-group
+					input.widget__control(type='range' min='5' max='30' value='15')
+					span.widget__text(data-postfix=' лет') 0 лет
+				div.widget__result
+					span Можете расчитывать на
+					span(data-type='result') 3 000 000 руб.
+					span Найдено <b>236</b> новостроек по такой цене
+				button.widget__btn(type='submit') Посмотреть
+		div.sidebar-menu__widget.widget
+			h4.widget__title Ипотечный калькулятор
+			form.widget__form#calculator
+				label.widget__wrapp Стоимость квартиры, рублей
+				div.widget__form-group
+					input.widget__control(type='text' placeholder='2 500 000' data-type='price')
+					
+				label.widget__wrapp Первоначальный взнос, рублей
+				div.widget__form-group
+					input.widget__control(type='text' placeholder='1 500 000' data-type='installment')
+					
+				label.widget__wrapp Срок ипотеки, лет
+				div.widget__form-group
+					input.widget__control(type='text' placeholder='15' data-type='term')
+
+				label.widget__wrapp Процентная ставка, %
+				div.widget__form-group
+					input.widget__control(type='text' placeholder='16.5' data-type='procent')
+					
+				
+				button.widget__btn(type='submit') Посмотреть
+

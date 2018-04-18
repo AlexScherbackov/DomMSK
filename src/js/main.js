@@ -3,7 +3,7 @@ svg4everybody();
 // @include('detect.js')
 // @include('globals.js')
 // @include('formWorker.js')
-// 
+// @include('functions.js')
 
 var _init = {
 	_initialize(){
@@ -12,7 +12,9 @@ var _init = {
 		_init._bindingEvent('#mobile-btn', 'click', toggleClass.bind('#mobile-menu', 'show'));
 		_init._cutString('.news__hover', 200);
 
-		const form = new formWorker('#header-form');
+		const searchForm = new formWorker('#header-form', 'search');
+		const options = new formWorker('#options', 'opt');
+		const calculator = new formWorker('#calculator', 'calc');
 	},
 	_bindingEvent(elem, event, func){
 		const element = document.querySelector(elem);
@@ -47,24 +49,8 @@ var _init = {
 }
 
 
-$document.ready(_init._initialize); 
+window.addEventListener('load',_init._initialize); 
 
 
-function toggleClass(className){
-	const element = document.querySelector(this);
-	element.classList.toggle(className);
-}
 
-function toggleAnimate(indent ,firstClass, secondClass){
-	const element = document.querySelector(this);
-	if(element.classList.contains('firstLoad')){
-		element.classList.remove('firstLoad');
-	}
-	if(element.classList.contains(indent)){
-		element.classList.remove(firstClass);
-		element.classList.add(secondClass);
-	} else if(element.classList.contains(secondClass)){
-		element.classList.remove(secondClass);
-		element.classList.add(firstClass);
-	} 
-}
+

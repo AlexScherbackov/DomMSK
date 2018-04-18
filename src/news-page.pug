@@ -1,0 +1,12 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+	- header = {title: 'Открыта продажа квартир в новом районе ЖК "Город-событие Лайково"', classList:'main-head.main-head--with-bg main-head--news-page-bg',  subtitle: 'Девелоперская компания Urban Group вывела на рынок квартиры, расположенные в квартале "Green" ЖК "Город-событие "Лайково".', date: '28 Июля 2017, 08:50', textClassList: 'main-head__text main-head__text--fw300 main-head__text--fz24'};
+
+block content
+	include pug/asets/top-line.pug
+	include pug/asets/small-header.pug
+	include pug/asets/header-with-bg.pug
+	include pug/news-page/main.pug
+	include pug/asets/footer.pug

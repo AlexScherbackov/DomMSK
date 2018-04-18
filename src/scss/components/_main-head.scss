@@ -29,6 +29,20 @@
 		height: 440px;
 		background-position: center center;
 	}
+	&--builder-page-bg{
+		background-image: url('../../images/builders-header-bg.png');
+		padding-top: 110px;
+		padding-bottom: 110px;
+		height: 440px;
+		background-position: center center;
+	}
+	&--news-page-bg{
+		background-image: url('../../images/news-header-bg.png');
+		padding-top: 110px;
+		padding-bottom: 110px;
+		height: 440px;
+		background-position: center center;
+	}
 	&__content{
 		@include screen(576px, 768px){
 			max-width: 670px!important;
@@ -39,6 +53,8 @@
 	}
 	&__title{
 		width: 100%;
+		max-width: 900px;
+		margin: 0 auto;
 	}
 	&__subtittle{
 		display: block;
@@ -48,6 +64,14 @@
 		}
 		@include max-screen(575px){
 			font-size: em(14px);
+		}
+		&--ma{
+			margin: 0 auto;
+			width: 300px;
+			text-align: center;
+		}
+		&--acent-color{
+			color: $acent-txt-cl;
 		}
 	}
 	&__form{
@@ -59,6 +83,35 @@
 		color: $color-white2;	
 		text-align: center;	
 		max-width: 800px;
-
+		&--fw300{
+			font-weight: 300;
+			color: $color-white2;
+			max-width: 900px;
+		}
+		&--fz24{
+			font-size: em(24px);
+		}
+	}
+	&__flex-row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 500px;
+		width: 100%;
+		margin: 0 auto;
+		@include max-screen(580px){
+			flex-direction: column;
+		}
+	}
+	&__icon{
+		margin-right: 25px;
+	}
+	&__date{
+		display: block;
+		width: 150px;
+		margin: 10px auto;
+		font-size: 	em(16px);
+		color: $color-gray5;	
+		text-align: center;	
 	}
 }

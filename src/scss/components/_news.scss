@@ -62,8 +62,6 @@
 				letter-spacing: 0.16px;
 			}
 		}
-		
-		
 	}
 	&__text{
 		display: none;
@@ -75,6 +73,12 @@
 			margin-top: 20px;
 			padding-top: 20px;
 		}
-		
+		&--db{
+			display: block;
+		}
+		&--shadow{
+			color:$color-gray5;
+		}
 	}
+
 }

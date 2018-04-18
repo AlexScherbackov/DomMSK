@@ -1,0 +1,65 @@
+mixin post-card(href, poster, apartament, location, builder,floors)
+
+	a.post-card.post-card__wrapper(href=href)
+
+		div(class='post-card__poster '+poster.posterClass)
+			img.post-card__img(src=poster.img)
+			span.post-card__title=poster.title
+
+		div.post-card__content
+
+			if(apartament)
+				div.post-card__row.post-card__row--jcfs
+					span.post-card__text-element=apartament.type
+					span.post-card__text-element=apartament.area
+				div.post-card__row.post-card__row--jcfs
+					span.post-card__text-element.post-card__text-element--type2 #{apartament.price} руб.
+					span.post-card__text-element.post-card__text-element--type2 (#{apartament.pricePerMetr} руб/кв. м)
+				div.post-card__row
+					div.post-card__delimiter
+				
+			
+			if(location)
+				p(class='post-card__location '+location.classList)
+					span.fas.fa-map-marker.post-card__icon.post-card__icon--blue
+					span=location.adress
+				div.post-card__row
+					div.post-card__row-item
+						span.post-card__icon.post-card__icon--red
+							+svg('metro')
+						span.post-card__text=location.metro
+					div.post-card__row-item
+						case location.subType
+							when 'bus'
+								span.post-card__icon.post-card__icon--blue
+									+svg('bus')
+								span.post-card__text=location.time
+							when 'step'
+								span.post-card__icon.post-card__icon--blue
+									+svg('step')
+								span.post-card__text=location.time
+
+			if(builder)
+				div.post-card__row
+					div.post-card__row-item
+						span.post-card__text.post-card__text--shadow Сдача
+					div.post-card__row-item
+						span.post-card__text=builder.release
+				div.post-card__row.post-card__row--no-mt
+					div.post-card__row-item
+						span.post-card__text.post-card__text--shadow Застройщик
+					div.post-card__row-item
+						span.post-card__text=builder.builder
+				if(builder.delimiter)
+					div.post-card__row
+						div.post-card__delimiter
+
+			if(floors)
+				div.post-card__row
+					span.post-card__text.post-card__text--big Планировки:
+				each elem in floors
+					div.post-card__row.post-card__row--sm-mt
+						div.post-card__row-item 
+							span.post-card__text=elem.type
+						div.post-card__row-item 
+							span.post-card__text=elem.price

@@ -2,6 +2,9 @@
 	display:grid;
 	grid-template-columns: repeat(2, 2fr);
 	grid-column-gap: 30px;
+	&--1frRep3fr{
+		grid-template-columns: 1fr 3fr;
+	}
 	@include max-screen(991px){
 		grid-template-columns: 2fr;
 	}
@@ -32,6 +35,15 @@
 		background-color: $color-gray;
 		@include max-screen(991px){
 			margin: 0 auto;
+		}
+		&--without-bg{
+			background: none;
+		}
+		&--mw200{
+			width: 200px;
+		}
+		&--mh200{
+			height: 200px;
 		}
 	}
 	&__img{

@@ -1,0 +1,12 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+	- header = {title: 'Urban Group', classList:'main-head.main-head--with-bg main-head--builder-page-bg', adress: 'ул. Большая Академическая, д. 5, стр. 1', tel: '+7 (495) 225-8-225', email: 'info@urbgroup.ru', web: 'http://urbangroup.ru/', builders: 'Строительная компания'};
+
+block content
+	include pug/asets/top-line.pug
+	include pug/asets/small-header.pug
+	include pug/asets/header-with-bg.pug
+	include pug/builder-page/main.pug
+	include pug/asets/footer.pug

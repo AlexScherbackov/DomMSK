@@ -1,5 +1,4 @@
 .post-card{
-	position: relative;
 	font-weight: 400;
 	color: $main-txt-cl;
 	text-decoration: none;
@@ -13,6 +12,9 @@
 			display: block;
 		}
 		
+	}
+	&__wrapper{
+		position: relative;
 	}
 	&__poster{
 		width: 100%;
@@ -156,3 +158,4 @@
 		}
 	}
 }
+

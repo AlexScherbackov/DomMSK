@@ -91,6 +91,8 @@
 		grid-column-end: 3;
 		text-align: center;
 		background-color: $color-gray4;
+		margin-top: 40px;
+		margin-bottom: 40px;
 		@include max-screen(1200px){
 			grid-column-end: 2;
 		}
@@ -111,6 +113,7 @@
 			justify-content: center;
 		}
 	}
+	
 }
 
 .small-bar{

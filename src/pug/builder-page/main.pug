@@ -1,0 +1,51 @@
+include ../mixins/post-card
+
+append vars 
+	- info = [{text: 'Адрес офиса', val: 'ул. Большая Академическая, д. 5, стр. 1'},{text: 'Телефон', val: '(495) 225-8-225'}, {text: 'E-mail', val:'nfo@urbgroup.ru'}, {text: 'Сайт', val:'http://urbangroup.ru/'}, {text: 'Дата создания', val:'2007 г.'}, {text: 'Построенные объекты', val:'2 построенные новостройки'}, {text: 'Строящиеся объекты', val:'7 строящихся новостроек'} ]
+	- postCards = [{key: '1', href: '/', poster:{posterClass: '', img: '../../images/card-1.png', title: 'ЖК "The MID" (МИД)'}, location: {classList: '',adress: 'Красногорский р-он',  metro: 'Митино', subType:'bus',time: '25 минут'}, builder:{release:'4 кв 2011 — 4 кв 2018', builder:'Затонское'}, floors: [{type: 'Студии', price: 'от 1 200 000 руб.'}, {type: '1 ком. квартиры', price: 'от 1 600 000 руб.'}, {type: '2 ком. квартиры',price: 'от 2 000 000 руб.'}, {type:'3 ком. квартиры' ,price:'нет в продаже'}, {type:'4 ком. квартиры' ,price:'нет в продаже'}, {type:'5 ком. квартиры' ,price:'нет в продаже'}]}, {key: '1', href: '/', poster:{posterClass: '', img: '../../images/card-1.png', title: 'ЖК "The MID" (МИД)'}, location: {classList: '',adress: 'Красногорский р-он',  metro: 'Митино', subType:'bus',time: '25 минут'}, builder:{release:'4 кв 2011 — 4 кв 2018', builder:'Затонское'}, floors: [{type: 'Студии', price: 'от 1 200 000 руб.'}, {type: '1 ком. квартиры', price: 'от 1 600 000 руб.'}, {type: '2 ком. квартиры',price: 'от 2 000 000 руб.'}, {type:'3 ком. квартиры' ,price:'нет в продаже'}, {type:'4 ком. квартиры' ,price:'нет в продаже'}, {type:'5 ком. квартиры' ,price:'нет в продаже'}]},{key: '1', href: '/', poster:{posterClass: '', img: '../../images/card-1.png', title: 'ЖК "The MID" (МИД)'}, location: {classList: '',adress: 'Красногорский р-он',  metro: 'Митино', subType:'bus',time: '25 минут'}, builder:{release:'4 кв 2011 — 4 кв 2018', builder:'Затонское'}, floors: [{type: 'Студии', price: 'от 1 200 000 руб.'}, {type: '1 ком. квартиры', price: 'от 1 600 000 руб.'}, {type: '2 ком. квартиры',price: 'от 2 000 000 руб.'}, {type:'3 ком. квартиры' ,price:'нет в продаже'}, {type:'4 ком. квартиры' ,price:'нет в продаже'}, {type:'5 ком. квартиры' ,price:'нет в продаже'}]},{key: '1', href: '/', poster:{posterClass: '', img: '../../images/card-1.png', title: 'ЖК "The MID" (МИД)'}, location: {classList: '',adress: 'Красногорский р-он',  metro: 'Митино', subType:'bus',time: '25 минут'}, builder:{release:'4 кв 2011 — 4 кв 2018', builder:'Затонское'}, floors: [{type: 'Студии', price: 'от 1 200 000 руб.'}, {type: '1 ком. квартиры', price: 'от 1 600 000 руб.'}, {type: '2 ком. квартиры',price: 'от 2 000 000 руб.'}, {type:'3 ком. квартиры' ,price:'нет в продаже'}, {type:'4 ком. квартиры' ,price:'нет в продаже'}, {type:'5 ком. квартиры' ,price:'нет в продаже'}]}]
+
+block content
+	main.main-section
+		div.container
+			div.main-section__wrapper
+				block content
+					include ../asets/sidebar.pug
+				div.main-section__content
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Застройщик Urban Group
+					div.content__long-post.long-post.long-post--1frRep3fr
+						div.long-post__poster.long-post__poster--without-bg.long-post__poster--mw200.long-post__poster--mh200
+							img.long-post__img(src='../../images/builder-page.png')
+							
+						div.long-post__text-wrapper
+							div.long-post__text
+								ul.long-post__list
+									each item in info
+										li.long-post__list-item
+											span.long-post__shadow-text=item.text
+											- var flag = typeof item.val == 'object' ? true:false
+											if flag
+												ul.long-post__list.long-post__list--short
+													each elem in item.val
+														li
+															span.long-post__value=elem
+											else
+												span.long-post__value=item.val 
+					p.info-block Компания "Urban Group" давно зарекомендовала себя, как надежный партнер, способный оперативно и качественно реализовать проекты любой сложности. Она строит только современное комфортабельное жилье, использует оригинальные авторские решения, обеспечивает максимальное удобство проживания для потенциальных покупателей. Работая на рынке с 2007 года, "Urban Group" продолжает постигать новые технологические решения, позволяющие добиваться своих главных целей, удерживать высокие позиции в своей сфере деятельности.
+
+					p.info-block Все жилые комплексы, уже построенные компанией и находящиеся в стадии строительства, располагаются в лучших столичных районах. Приобретая квартиру в домах от "Урбан Групп", вы сможете сразу же пользоваться всеми благами цивилизации, не тратя время на ожидание появления новых объектов социальной инфраструктуры
+
+					p.info-block  Компания осуществляет полный комплекс работ по возведению жилой недвижимости. Она не только проектирует здания и успешно реализует эти проекты, но и занимается изготовлением качественных строительных материалов, отвечающих современным требованиям и стандартам. Также "Urban Group" внимательно прислушивается к мнению своих существующих и потенциальных клиентов, учитывает его в ходе разработки новых решений.
+					div.content__adversting Место для рекламы
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Строящиеся новостройки компании Urban Group
+					div.content__post-card
+						each item in postCards
+							+post-card(item.href, item.poster, false, item.location, item.builder, item.floors)
+					a.content__btn(href="/") 
+							span Все строящиеся новостройки
+							span.content__arrow
+					div.content__adversting Место для рекламы
+					h2.base-title.base-title--type2.base-title--black.main-section__title.main-section__title--with-bb.main-section__title--mb Построенные новостройки компании Urban Group
+					div.content__post-card
+						each item in postCards
+							+post-card(item.href, item.poster, false, item.location, item.builder, item.floors)
+				

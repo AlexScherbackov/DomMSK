@@ -1,20 +1,22 @@
 class formWorker {
 	constructor(id, type){
 		this._form = document.querySelector(id);
-		if(type=='search'){
-			this.setupRadioSettings();
-			this.setupCheckboxSettings();
-		} else if(type=='calc'){
-			this._form.querySelectorAll('.widget__control').forEach((item)=>{
-				item.addEventListener('input', this.validate.bind(item));
-			});
-			
-		} else if(type=='opt'){
-			this._form.querySelectorAll('.widget__control').forEach((item)=>{
-				item.addEventListener('input', this.inputWatch.bind(item, '.widget__text', 'postfix'));
-				this.inputWatch.call(item, '.widget__text', 'postfix');
-				item.addEventListener('change', this.checkResult.bind(this, "\-?\d+(\.\d{0,})?"));
-			})
+		if(this._form ){
+			if(type=='search'){
+				this.setupRadioSettings();
+				this.setupCheckboxSettings();
+			} else if(type=='calc'){
+				this._form.querySelectorAll('.widget__control').forEach((item)=>{
+					item.addEventListener('input', this.validate.bind(item));
+				});
+
+			} else if(type=='opt'){
+				this._form.querySelectorAll('.widget__control').forEach((item)=>{
+					item.addEventListener('input', this.inputWatch.bind(item, '.widget__text', 'postfix'));
+					this.inputWatch.call(item, '.widget__text', 'postfix');
+					item.addEventListener('change', this.checkResult.bind(this, "\-?\d+(\.\d{0,})?"));
+				})
+			}
 		}
 		
 	}
@@ -41,9 +43,12 @@ class formWorker {
 	setupCheckboxSettings(){
 		const flags = this._form.querySelectorAll('.search-form__checkbox');
 		flags.forEach((item)=>{
-			item.addEventListener('click', ()=>{
-				item.classList.toggle('active');
-			})
+			if(item){
+				item.addEventListener('click', ()=>{
+					item.classList.toggle('active');
+				})
+			}
+			
 		})
 	}
 	inputWatch(selector, dataAtr){
@@ -52,7 +57,6 @@ class formWorker {
 	}
 	checkResult(){
 		const arr = this._form.querySelectorAll('.widget__control');
-		console.log(+arr[0].value + arr[1].value*arr[2].value);
 		this._form.querySelector("span[data-type='result']").textContent = (+arr[0].value + arr[1].value*arr[2].value).toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
 	}
 	validate(pattern){

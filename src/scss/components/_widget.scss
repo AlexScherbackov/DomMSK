@@ -130,6 +130,9 @@
 		}
 
 	}
+	&__text{
+		font-feature-settings: "tnum";
+	}
 	&__result{
 		display: flex;
 		flex-direction: column;
@@ -138,6 +141,7 @@
 		font-size: em(14px);
 		font-weight: 400;
 		margin-top: 30px;
+		font-feature-settings: "tnum";
 		& span {
 			max-width: 170px;
 			text-align: center;

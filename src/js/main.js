@@ -4,6 +4,7 @@ svg4everybody();
 // @include('globals.js')
 // @include('formWorker.js')
 // @include('functions.js')
+// @include('accordion.js')
 
 var _init = {
 	_initialize(){
@@ -15,6 +16,7 @@ var _init = {
 		const searchForm = new formWorker('#header-form', 'search');
 		const options = new formWorker('#options', 'opt');
 		const calculator = new formWorker('#calculator', 'calc');
+		const menu = new accordion('.accordion');
 	},
 	_bindingEvent(elem, event, func){
 		const element = document.querySelector(elem);

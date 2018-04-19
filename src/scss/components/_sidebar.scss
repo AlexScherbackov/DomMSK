@@ -33,7 +33,17 @@
 					background-color: $color-turq;
 				}
 			}
-			
+		}
+		&.active .sidebar-menu__arrow{
+			&:before, &:after{
+				background-color: $color-orange;
+			}
+			&:before{
+				transform: rotate(-45deg);
+			}
+			&:after{
+				transform: rotate(-135deg)
+			}
 		}
 	}
 	&__icon{
@@ -55,7 +65,7 @@
 			width: 8px;
 			height: 1px;
 			background-color: $acent-cl;
-
+			transition: background-color ease 0.4s;
 		}
 		&:before{
 			transform: rotate(45deg);

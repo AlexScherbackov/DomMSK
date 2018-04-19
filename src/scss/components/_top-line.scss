@@ -5,9 +5,6 @@
 	padding-top: 12px;
 	padding-bottom: 12px;
 	position: relative;
-	&__logo{
-		
-	}
 	&__menu{
 		display: block;
 		height: 100%;
@@ -24,8 +21,11 @@
 			display: block;
 		}
 	}
+	&__mobile-menu{
+		position: absolute;
+		top: 100%;
+	}
 }
-
 .menu{
 	&__list{
 		display: flex;
@@ -104,12 +104,10 @@
 }
 
 .mobile-menu{
-	position: absolute;
 	width: 100%;
 	min-height: 45px;
 	padding-bottom: 10px;
 	background-color: $body-bg;
-	top: 100%;
 	transition: all ease 0.5s;
 	&.firstLoad{
 		display: none;
